@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>xarm_controller</name>
+  <name>xarm_interface</name>
   <version>0.0.0</version>
-  <description>The xarm_controller package</description>
+  <description>The xarm_interface package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
