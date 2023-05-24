@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/aac/catkin_xarm/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/aac/catkin_xarm/src/xarm_ros/xarm_api/include/**",
+        "/home/aac/catkin_xarm/src/xarm_ros/xarm_controller/include/**",
+        "/home/aac/catkin_xarm/src/xarm_ros/xarm_moveit_servo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
