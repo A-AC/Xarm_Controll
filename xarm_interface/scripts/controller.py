@@ -11,9 +11,16 @@ from geometry_msgs.msg import Pose
 
 main_pose = Pose()
 
+def callback(msg):
+    global main_pose
+    main_pose.position.x = msg.position.x
+    main_pose.position.y = msg.position.y
+    main_pose.position.z = msg.position.z
+
 if __name__ == '__main__':
     print("Xarm Controller Running")
     rospy.init_node("Controller")
+    rospy.Subscriber("/qr_pose", Pose, callback)
     rate = rospy.Rate(100)
 
     while not rospy.is_shutdown():
@@ -22,20 +29,20 @@ if __name__ == '__main__':
         planner = rospy.ServiceProxy('xarm_pose_plan', pose_plan)
         executor = rospy.ServiceProxy('xarm_exec_plan', exec_plan)
 
-        x = input("x: ")
-        y = input("y: ")
-        z = input("z: ")
-
-        main_pose.position.x=x
-        main_pose.position.y=y
-        main_pose.position.z=z
-
         main_pose.orientation.x=1.0
         main_pose.orientation.y=0.0
         main_pose.orientation.z=0.0
         main_pose.orientation.w=0.0
 
-        planner.call(main_pose)
-        executor.call(True)
+        print("Trying:\n")
+        print("X: " + str(main_pose.position.x))
+        print("Y: " + str(main_pose.position.y))
+        print("Z: " + str(main_pose.position.z))
+
+        try:
+            planner.call(main_pose)
+            executor.call(True)
+        except:
+            print("No posible")
     
         rate.sleep()
