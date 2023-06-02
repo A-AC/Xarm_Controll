@@ -6,16 +6,15 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from sensor_msgs.msg import CameraInfo
 
-
-k1 = -0.29113772
-k2 = 0.741412078
-t1 = -0.0028312127
-t2 = 0.001078064
-k3 = -1.31088456
-fx = 650.615814
-cx = 323.7810939
-fy = 650.2484003
-cy = 239.8744077
+k1 = -0.042486062
+k2 = 0.81350574
+t1 = -0.0048942071
+t2 = 0.0018472401
+k3 = -3.2331309
+fx = 653.1650038
+cx = 317.900734
+fy = 653.5617567
+cy = 260.1273618
 
 camera_info = CameraInfo()
 camera_info.width = 640

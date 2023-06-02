@@ -15,7 +15,7 @@ def callback(msg):
     global main_pose
     main_pose.position.x = msg.position.x
     main_pose.position.y = msg.position.y
-    main_pose.position.z = msg.position.z
+    main_pose.position.z = msg.position.z+0.3
 
 if __name__ == '__main__':
     print("Xarm Controller Running")
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
         try:
             planner.call(main_pose)
-            executor.call(True)
+            #executor.call(True)
         except:
             print("No posible")
     
